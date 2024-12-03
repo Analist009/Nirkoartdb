@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_OPENAI_API_KEY": "@openai_api_key",
+    "VITE_VERCEL_BLOB_READ_WRITE_TOKEN": "@vercel_blob_token"
+  }
+}
